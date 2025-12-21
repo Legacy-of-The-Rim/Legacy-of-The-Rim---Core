@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+	<ThingDef Name="LOTR_ApparelMakeableBase" Abstract="True" ParentName="ApparelMakeableBase">
+		<techLevel>Medieval</techLevel>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CraftingSpot</li>
+				<li MayRequire="LOTR.MenOfTheWest">LOTR_Workbench</li>
+				<li MayRequire="LOTR.ShadofOfTheEast">LOTR_OrcWorkbench</li>
+			</recipeUsers>
+		</recipeMaker>
+		<thingCategories>
+			<li>Apparel</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef Name="LOTR_ArmorSmithableBase" Abstract="True" ParentName="ArmorSmithableBase">
+		<techLevel>Medieval</techLevel>
+		<recipeMaker>
+			<unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+			<recipeUsers>
+				<li>ElectricSmithy</li>
+				<li>FueledSmithy</li>
+				<li MayRequire="LOTR.MenOfTheWest">LOTR_Workbench</li>
+        		<li MayRequire="LOTR.MenOfTheWest">LOTR_Anvil</li>
+				<li MayRequire="LOTR.ShadofOfTheEast">LOTR_OrcWorkbench</li>
+				<li MayRequire="LOTR.ShadofOfTheEast">LOTR_OrcAnvil</li>
+			</recipeUsers>
+		</recipeMaker>
+		<thingCategories>
+			<li>Apparel</li>
+		</thingCategories>
+	</ThingDef>
+
+</Defs>

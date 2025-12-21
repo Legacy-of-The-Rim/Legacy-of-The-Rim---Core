@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>LOTR - Framework</name>
+	<author>Galahad</author>
+	<url></url>
+	<description>
+		This mod serves as the core of the LOTR universe for RimWorld. It provides essential assets, mechanics, and functionalities that other LOTR-themed mods can build upon. By installing this framework, players ensure compatibility and a seamless experience when exploring the rich lore and adventures of Middle-earth within the RimWorld environment.
+	</description>
+
+	<packageId>LOTR.Framework</packageId>
+	<supportedVersions>
+		<li>1.6</li>
+	</supportedVersions>
+	<modIconPath IgnoreIfNoMatchingField="True">UI/LOTR_Logo</modIconPath>
+
+	<loadBefore>
+	</loadBefore>
+
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>brrainz.harmony</li>
+		<li>UnlimitedHugs.HugsLib</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+	</loadAfter>
+
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+		</li>
+		<li>
+			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+			<displayName>Vanilla Expanded Framework</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
+			<downloadUrl>https://github.com/Vanilla-Expanded/VanillaExpandedFramework</downloadUrl>
+		</li>
+	</modDependencies>
+
+	<incompatibleWith>
+	</incompatibleWith>
+
+</ModMetaData>
