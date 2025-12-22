@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-<MemeDef>
+	<MemeDef>
 		<defName>LOTR_ShieldOfTheWest</defName>
 		<label>shield of the west</label>
 		<description>For generations, Gondor has stood as the shield that guards the Free Peoples. Its warriors endure hardship, hold the line, and face the Shadow so others do not have to.</description>
@@ -68,6 +68,9 @@
 			</li>
 			<li>
 				<li>VME_DumbLabor_Horrible</li>
+			</li>
+			<li>
+				<li>LOTR_HatedXenotype_Snaga</li>
 			</li>
 		</requireOne>
 		<symbolPacks>
@@ -1107,7 +1110,7 @@
 		<iconPath>UI/Memes/ExaltedPriesthood</iconPath>
 		<groupDef>Misc</groupDef>
 		<exclusionTags>
-			
+
 		</exclusionTags>
 		<impact>1</impact>
 		<generalRules>

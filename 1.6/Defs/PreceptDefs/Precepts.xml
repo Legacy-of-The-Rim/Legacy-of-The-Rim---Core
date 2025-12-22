@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>LOTR_HatedXenotypes</defName>
+    <label>hated xenotype</label>
+    <allowMultiplePrecepts>true</allowMultiplePrecepts>
+  </IssueDef>
+
+  <PreceptDef>
+    <defName>LOTR_HatedXenotype</defName>
+    <issue>LOTR_HatedXenotypes</issue>
+    <label>hated</label>
+    <description>Believers consider this xenotype to be despicable and loathsome. They will be unhappy if colonists of this xenotype are present in the colony.</description>
+    <preceptClass>LegacyofTheRimCore.Precept_HatedXenotype</preceptClass>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+    <ignoreNameUniqueness>true</ignoreNameUniqueness>
+    <impact>Medium</impact>
+    <maxCount>3</maxCount>
+    <comps>
+      <li Class="LegacyofTheRimCore.PreceptComp_SituationalThought_HatedXenotype">
+        <thought>LOTR_HatedXenotypePresent</thought>
+      </li>
+      <li Class="LegacyofTheRimCore.PreceptComp_SituationalThought_HatedXenotype">
+        <thought>LOTR_HatedXenotypeSocial</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>LOTR_HatedXenotypePresent</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>LegacyofTheRimCore.ThoughtWorker_HatedXenotypePresent</workerClass>
+    <stages>
+      <li>
+        <label>hated xenotype present</label>
+        <description>There's a despicable {XENOTYPENAME} in our colony. It makes me sick to be around them.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>LOTR_HatedXenotypeSocial</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>LegacyofTheRimCore.ThoughtWorker_HatedXenotypeSocial</workerClass>
+    <stages>
+      <li>
+        <label>hated xenotype</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <PreceptDef>
+    <defName>LOTR_HatedXenotype_Snaga</defName>
+    <issue>LOTR_HatedXenotypes</issue>
+    <label>hated (Snaga)</label>
+    <description>Gondor considers Snagas to be despicable and loathsome. They will be unhappy if colonists of this xenotype are present in the colony.</description>
+    <associatedMemes>
+      <li>LOTR_ShieldOfTheWest</li>
+    </associatedMemes>
+    <impact>Medium</impact>
+    <comps>
+      <li Class="LegacyofTheRimCore.PreceptComp_SituationalThought_HatedXenotype">
+        <thought>LOTR_HatedXenotypePresent_Snaga</thought>
+        <hatedXenotypes>
+          <li>LOTR_Mordor_Snaga_Xenotype</li>
+        </hatedXenotypes>
+      </li>
+      <li Class="LegacyofTheRimCore.PreceptComp_SituationalThought_HatedXenotype">
+        <thought>LOTR_HatedXenotypeSocial_Snaga</thought>
+        <hatedXenotypes>
+          <li>LOTR_Mordor_Snaga_Xenotype</li>
+        </hatedXenotypes>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>LOTR_HatedXenotypePresent_Snaga</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>LegacyofTheRimCore.ThoughtWorker_HatedXenotypePresent</workerClass>
+    <stages>
+      <li>
+        <label>filthy orc present</label>
+        <description>There's a filthy, stinking orc in our colony. Their presence brings shame to our settlement.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>LOTR_HatedXenotypeSocial_Snaga</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>LegacyofTheRimCore.ThoughtWorker_HatedXenotypeSocial</workerClass>
+    <stages>
+      <li>
+        <label>filthy orc</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <PreceptDef>
+    <defName>LOTR_HatedXenotype_Baseliner</defName>
+    <issue>LOTR_HatedXenotypes</issue>
+    <label>hated (baseliner)</label>
+    <description>Mordor considers baseliner humans to be weak and pathetic. They will be unhappy if colonists of this xenotype are present in the colony.</description>
+    <ignoreNameUniqueness>true</ignoreNameUniqueness>
+    <impact>Medium</impact>
+    <comps>
+      <li Class="LegacyofTheRimCore.PreceptComp_SituationalThought_HatedXenotype">
+        <thought>LOTR_HatedXenotypePresent_Baseliner</thought>
+        <hatedXenotypes>
+          <li>Baseliner</li>
+        </hatedXenotypes>
+      </li>
+      <li Class="LegacyofTheRimCore.PreceptComp_SituationalThought_HatedXenotype">
+        <thought>LOTR_HatedXenotypeSocial_Baseliner</thought>
+        <hatedXenotypes>
+          <li>Baseliner</li>
+        </hatedXenotypes>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>LOTR_HatedXenotypePresent_Baseliner</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>LegacyofTheRimCore.ThoughtWorker_HatedXenotypePresent</workerClass>
+    <stages>
+      <li>
+        <label>weak baseliner present</label>
+        <description>There's a weak, pathetic baseliner in our colony. Their very presence disgusts me.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>LOTR_HatedXenotypeSocial_Baseliner</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>LegacyofTheRimCore.ThoughtWorker_HatedXenotypeSocial</workerClass>
+    <stages>
+      <li>
+        <label>weak baseliner</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>
