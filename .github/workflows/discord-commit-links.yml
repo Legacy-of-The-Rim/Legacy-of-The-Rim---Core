@@ -9,9 +9,6 @@ jobs:
   notify_discord:
     runs-on: ubuntu-latest
     steps:
-      - name: Extract Short Commit SHA (For Push Events)
-        if: github.event_name == 'push'
-        run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
 
       - name: Send Webhook for Push (Embed Only for Commit)
         if: github.event_name == 'push'
