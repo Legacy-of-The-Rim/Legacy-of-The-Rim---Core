@@ -1,0 +1,16 @@
+name: Discord Webhook for Main Branch Release
+
+on:
+  release:
+    types: [published]
+jobs:
+  notify_discord:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Webhook for Release (Embed Release Info)
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          curl -X POST -H "Content-Type: application/json" \
+          -d "{\"content\": \"📜 **New public repository released!!**\n📦 **Repository:** <https://github.com/${{ github.repository }}>\n🏷 **Release:** [${{ github.event.release.tag_name }}](https://github.com/${{ github.repository }}/releases/tag/${{ github.event.release.tag_name }})\n📝 **Notes:** ${{ github.event.release.name }}\"}" \
+          $DISCORD_WEBHOOK_URL
