@@ -4,7 +4,7 @@
 	<author>Galahad</author>
 	<url></url>
 	<description>
-		This mod serves as the core of the LOTR universe for the RimWorld. It provides essential assets, mechanics, and functionalities that other LOTR-themed mods can build upon. By installing this framework, players ensure compatibility and a seamless experience when exploring the rich lore and adventures of Middle-earth within the RimWorld environment.
+		This mod serves as the core of the LOTR universe for RimWorld. It provides essential assets, mechanics, and functionalities that other LOTR-themed mods can build upon. By installing this core framework, players ensure compatibility and a seamless experience when exploring the rich lore and adventures of Middle-earth within the RimWorld environment.
 	</description>
 
 	<packageId>LOTR.Core</packageId>
