@@ -5,6 +5,7 @@
     <defName>LOTR_HatedXenotypes</defName>
     <label>hated xenotype</label>
     <allowMultiplePrecepts>true</allowMultiplePrecepts>
+    <iconPath>UI/LOTR_HatedXenotype</iconPath>
   </IssueDef>
 
   <PreceptDef>

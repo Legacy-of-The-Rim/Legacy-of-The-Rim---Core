@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>LOTR - Framework</name>
+	<name>LOTR - Core</name>
 	<author>Galahad</author>
 	<url></url>
 	<description>
 		This mod serves as the core of the LOTR universe for RimWorld. It provides essential assets, mechanics, and functionalities that other LOTR-themed mods can build upon. By installing this framework, players ensure compatibility and a seamless experience when exploring the rich lore and adventures of Middle-earth within the RimWorld environment.
 	</description>
 
-	<packageId>LOTR.Framework</packageId>
+	<packageId>LOTR.Core</packageId>
 	<supportedVersions>
 		<li>1.6</li>
 	</supportedVersions>

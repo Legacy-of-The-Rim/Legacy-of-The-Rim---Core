@@ -8,6 +8,7 @@
 		<iconPath>UI/LOTR_ShieldOfTheWest</iconPath>
 		<groupDef>Misc</groupDef>
 		<impact>1</impact>
+		<worshipRoomLabel>The Silent Hall</worshipRoomLabel>
 		<exclusionTags>
 			<li>VME_Work</li>
 		</exclusionTags>
@@ -17,7 +18,8 @@
 				<li>memeAdjective->royal</li>
 				<li>memeAdjective->gondorian</li>
 				<li>memeHyphenPrefix->noble</li>
-				<li>memeConcept->aristocracy</li>
+				<li>memeConcept->duty</li>
+				<li>memeConcept->defend</li>
 				<li>memeLeaderNoun->steward</li>
 				<li>memeMoralist->bannerman</li>
 			</rulesStrings>
@@ -67,10 +69,48 @@
 				<li>VME_Power_Preferred</li>
 			</li>
 			<li>
-				<li>VME_DumbLabor_Horrible</li>
+				<li>LOTR_HatedXenotype_Snaga</li>
 			</li>
 			<li>
-				<li>LOTR_HatedXenotype_Snaga</li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_Abhorrent</li>
+			</li>
+			<li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Abhorrent</li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Horrible</li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Disapproved</li>
+			</li>
+			<li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">Execution_HorribleIfInnocent</li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">Execution_DontCare</li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">Execution_Required</li>
+			</li>
+			<li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">Lovin_SpouseOnly_Moderate</li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">Lovin_SpouseOnly_Mild</li>
+			</li>
+			<li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Horrible</li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Disapproved</li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Standard</li>
+			</li>
+			<li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_UncoveredGroinDisapproved</li>
+			</li>
+			<li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_UncoveredGroinOrChestDisapproved</li>
+			</li>
+			<li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">Blinding_Horrible</li>
+			</li>
+			<li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">OrganUse_HorribleSellOK</li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">OrganUse_Acceptable</li>
+			</li>
+			<li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">Scarification_Horrible</li>
+			</li>
+			<li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">Skullspike_Disapproved</li>
 			</li>
 		</requireOne>
 		<symbolPacks>
