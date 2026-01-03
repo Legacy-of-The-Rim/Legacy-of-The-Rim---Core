@@ -1,0 +1,44 @@
+name: Discord commit links (preview)
+
+on:
+  push:
+    branches: ["main", "dev"]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ensure jq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+
+      - name: Send commit links to Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          COMMITS_JSON: ${{ toJson(github.event.commits) }}
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ github.ref_name }}
+          PUSHER: ${{ github.actor }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${DISCORD_WEBHOOK_URL:-}" ]; then
+            echo "Missing DISCORD_WEBHOOK_URL"
+            exit 1
+          fi
+
+          # Send one message per commit so each link gets its own preview card
+          echo "$COMMITS_JSON" | jq -r '.[] | .url' | while read -r api_url; do
+            # Convert API URL to HTML URL
+            sha="${api_url##*/}"
+            html_url="https://github.com/$REPO/commit/$sha"
+
+            payload=$(jq -n \
+              --arg content "🔔 **$REPO** (`$BRANCH`) — pusher: **$PUSHER**\n$html_url" \
+              '{content: $content}')
+
+            curl -sS -X POST -H "Content-Type: application/json" \
+              -d "$payload" \
+              "$DISCORD_WEBHOOK_URL" >/dev/null
+          done
