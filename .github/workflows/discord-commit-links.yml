@@ -22,5 +22,5 @@ jobs:
           fi
 
           curl -sS -X POST -H "Content-Type: application/json" \
-          -d "{\"content\": \"🔔 **New commit pushed!**\n📂 **Repo:** https://github.com/${{ github.repository }}\n👤 **Pusher:** https://github.com/${{ github.actor }}\n🌿 **Branch:** `${{ github.ref_name }}`\n🔗 **Commit:** https://github.com/${{ github.repository }}/commit/${{ github.sha }}\"}" \
+          -d "{\"content\": \"🔔 **New commit pushed!**\n📂 **Repo:** https://github.com/${{ github.repository }}\n👤 **Pusher:** https://github.com/${{ github.actor }}\n🔗 **Commit:** https://github.com/${{ github.repository }}/commit/${{ github.sha }}\"}" \
           "$DISCORD_WEBHOOK_URL"
