@@ -1,44 +1,41 @@
-name: Discord commit links (preview)
+name: Discord: commits + releases (link previews)
 
 on:
   push:
-    branches: ["main", "dev"]
+    branches: [ "main", "dev" ]
+  release:
+    types: [ published ]
 
 jobs:
-  notify:
+  commits_to_discord:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
-      - name: Ensure jq
+      - name: Install jq
         run: |
           sudo apt-get update
           sudo apt-get install -y jq
 
-      - name: Send commit links to Discord
+      - name: Send commit links (one message per commit)
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          COMMITS_JSON: ${{ toJson(github.event.commits) }}
           REPO: ${{ github.repository }}
           BRANCH: ${{ github.ref_name }}
           PUSHER: ${{ github.actor }}
+          COMMITS_JSON: ${{ toJson(github.event.commits) }}
         run: |
           set -euo pipefail
-
           if [ -z "${DISCORD_WEBHOOK_URL:-}" ]; then
-            echo "Missing DISCORD_WEBHOOK_URL"
+            echo "Missing DISCORD_WEBHOOK_URL secret"
             exit 1
           fi
 
-          # Send one message per commit so each link gets its own preview card
-          echo "$COMMITS_JSON" | jq -r '.[] | .url' | while read -r api_url; do
-            # Convert API URL to HTML URL
-            sha="${api_url##*/}"
-            html_url="https://github.com/$REPO/commit/$sha"
-
-            payload=$(jq -n \
-              --arg content "🔔 **$REPO** (`$BRANCH`) — pusher: **$PUSHER**\n$html_url" \
-              '{content: $content}')
+          # Send one Discord message per commit so each link gets its own rich preview card.
+          echo "$COMMITS_JSON" | jq -r '.[] | .id' | while read -r sha; do
+            short_sha="${sha:0:7}"
+            url="https://github.com/$REPO/commit/$sha"
 
             curl -sS -X POST -H "Content-Type: application/json" \
-              -d "$payload" \
+              -d "{\"content\":\"🧩 **Commit** \`$short_sha\` on **$REPO** (\`$BRANCH\`)\\n👤 Pusher: https://github.com/$PUSHER\\n$url\"}" \
               "$DISCORD_WEBHOOK_URL" >/dev/null
           done
